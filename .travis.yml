@@ -17,10 +17,12 @@ install:
     - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then pip install sphinx; fi
 # Run tests
 
+
 script:
     - "python run_tests.py"
     # Run doctests against py27
     - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then cd docs && make doctest; fi
+    
 notifications:
      email:
          recipients:
